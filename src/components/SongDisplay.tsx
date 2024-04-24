@@ -28,14 +28,11 @@ const SongDisplay: React.FC<SongDisplayProps> = ({
  
     const serviceId = "service_qup7err";
     const templateId = "template_4nbk34k";
-    //const api_url = process.env.REACT_APP_SUNO_API_URL ?? 'https://suno-api-mauve-omega.vercel.app';
-    //const song = api_url + mp3_url;
-    const song = mp3_url;
 
     try {
       await emailjs.send(serviceId, templateId, {
         portada: cover,
-        cancion: song,
+        cancion: mp3_url,
         bcc: emails,
       });
       setShowSent(true);

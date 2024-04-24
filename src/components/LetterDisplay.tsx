@@ -57,12 +57,12 @@ const LetterDisplay: React.FC<LetterDisplayProps> = ({
       console.log(response);
       if(response.data && Array.isArray(response.data) && response.data[0]) {
         const image = response.data[0].image_url;
-        //const mp3 = response.data[0].mp3_url;
+        const mp3 = response.data[0].mp3_url;
         const audio = response.data[0].audio_url;
         setCover(image);
         setTimeout(() => { 
-          //setMp3(mp3);
-          setMp3(audio);
+          setMp3(mp3);
+          //setMp3(audio);
           setAudio(audio);
           setShowSong(true);  
         }, 1000);

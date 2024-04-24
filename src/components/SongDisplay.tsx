@@ -44,7 +44,6 @@ const SongDisplay: React.FC<SongDisplayProps> = ({
     setTimeout(() => {
       setShowSent(false);
      }, 5000);
-
   };
 
   return (

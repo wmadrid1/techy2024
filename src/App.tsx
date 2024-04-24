@@ -14,6 +14,7 @@ function App() {
   const [cover, setCover] = useState<string>("");
   const [mp3, setMp3] = useState<string>("");
   const [audio, setAudio] = useState<string>("");
+  const [titulo, setTitulo] = useState<string>("");
   const [showSong, setShowSong] = useState(false);
 
   return (
@@ -34,9 +35,9 @@ function App() {
           />
         </div>
         }
-      <LetterDisplay lyrics={lyrics} setLoading={setLoading} setCover={setCover} setAudio={setAudio} setMp3={setMp3} setShowSong={setShowSong}  />
+      <LetterDisplay lyrics={lyrics} setLoading={setLoading} setCover={setCover} setAudio={setAudio} setMp3={setMp3} setShowSong={setShowSong} setTitulo={setTitulo}  />
       <EmailInput setEmails={setEmails} />
-      <SongDisplay emails={emails} cover={cover} mp3_url={mp3} audio_url={audio} showSong={showSong} />
+      <SongDisplay emails={emails} cover={cover} mp3_url={mp3} audio_url={audio} showSong={showSong} titulo={titulo} />
     </div>
   );
 }

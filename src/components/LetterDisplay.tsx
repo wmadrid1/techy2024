@@ -9,6 +9,7 @@ interface LetterDisplayProps {
   setCover: (genre: string) => void;
   setMp3: (mp3: string) => void;
   setAudio: (audio: string) => void;
+  setTitulo: (titulo: string) => void;
   setShowSong: (show: boolean) => void;
   setLoading: (loading: boolean) => void;
 }
@@ -18,6 +19,7 @@ const LetterDisplay: React.FC<LetterDisplayProps> = ({
   setCover,
   setAudio,
   setMp3,
+  setTitulo,
   setLoading,
   setShowSong,
 }) => {
@@ -27,6 +29,7 @@ const LetterDisplay: React.FC<LetterDisplayProps> = ({
 
   const handleTitleChange = (e: any) => {
     setTitle(e.target.value);
+    setTitulo(e.target.value);
   };
 
   const handleGenreChange = (e: any) => {

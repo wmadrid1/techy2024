@@ -9,6 +9,7 @@ interface SongDisplayProps {
   cover: string;
   mp3_url: string;
   audio_url: string;
+  titulo: string;
   showSong: boolean;
 }
 
@@ -18,6 +19,7 @@ const SongDisplay: React.FC<SongDisplayProps> = ({
   mp3_url,
   audio_url,
   showSong,
+  titulo
 }) => {
 
   useEffect(() => emailjs.init(process.env.REACT_APP_EMAILJS_KEY ?? '6DPLoUxaLqR_Y5lsi'), []);
@@ -33,6 +35,7 @@ const SongDisplay: React.FC<SongDisplayProps> = ({
       await emailjs.send(serviceId, templateId, {
         portada: cover,
         cancion: mp3_url,
+        titulo: titulo,
         bcc: emails,
       });
       setShowSent(true);
